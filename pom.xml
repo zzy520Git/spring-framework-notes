@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>note.spring</groupId>
+  <artifactId>spring-framework-notes</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <url>https://blog.csdn.net/zzy520comzzy</url>
+  <modules>
+    <module>spring-read</module>
+    <module>spring-context</module>
+    <module>spring-beans</module>
+    <module>spring-core</module>
+    <module>spring-aop</module>
+    <module>spring-expression</module>
+    <module>spring-tx</module>
+    <module>spring-jdbc</module>
+    <module>spring-web</module>
+    <module>spring-webmvc</module>
+    <module>spring-context-support</module>
+    <module>spring-aspects</module>
+    <module>spring-orm</module>
+  </modules>
+  <name>${project.artifactId}</name>
+
+  <properties>
+    <spring.version>5.1.5.RELEASE</spring.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <lombok.version>1.18.8</lombok.version>
+    <fasterxml.jackson>2.9.8</fasterxml.jackson>
+    <slf4j.version>1.7.25</slf4j.version>
+    <logback.version>1.2.3</logback.version>
+    <log4j.version>1.2.17</log4j.version>
+    <commons-lang3.version>3.4</commons-lang3.version>
+    <commons-collections4.version>4.1</commons-collections4.version>
+    <commons-lang.version>2.6</commons-lang.version>
+    <aspectjweaver.version>1.8.10</aspectjweaver.version>
+    <alibaba.fastjson>1.2.47</alibaba.fastjson>
+    <junit.version>4.12</junit.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <!-- 配置构建时忽略测试用例 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <argLine>-Dfile.encoding=UTF-8</argLine>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+
+
+</project>
